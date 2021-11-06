@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Kelurahan Priuk @yield('title')</title>
+  <title>Dispora Kota Tangerang @yield('title')</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('template-backend/plugins/fontawesome-free/css/all.min.css') }}">
@@ -46,7 +46,7 @@ to get the desired effect
     <!-- SEARCH FORM -->
 
     <!-- Right navbar links -->
-    {{-- <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto">
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item">
         <a class="nav-link d-flex justify-content-start">
@@ -57,7 +57,7 @@ to get the desired effect
           <p class="m-2">Logout</p>
         </a>
       </li>
-    </ul> --}}
+    </ul>
   </nav>
   <!-- /.navbar -->
 

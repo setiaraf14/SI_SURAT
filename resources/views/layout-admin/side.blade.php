@@ -30,18 +30,18 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link @yield('permohonan-ktp') ">
+            <a href="{{ url('/admin/surat-masuk') }}" class="nav-link @yield('Surat-Masuk') ">
               <i class="nav-icon fas fa-id-card"></i>
               <p>
-                Menu 1
+                Surat Masuk
               </p>
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link @yield('permohonan-kk') ">
+            <a href="{{ url('/admin/surat-keluar') }}" class="nav-link @yield('Surat-Keluar') ">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>
-                Menu 2
+                Surat Keluar
               </p>
             </a>
           </li>
