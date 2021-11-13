@@ -8,14 +8,22 @@
   <title>Dispora Kota Tangerang @yield('title')</title>
 
   <!-- Font Awesome Icons -->
+  
   <link rel="stylesheet" href="{{ asset('template-backend/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- IonIcons -->
   <link rel="stylesheet" href="{{ asset('template-backend/http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('template-backend/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <!-- jika menggunakan bootstrap4 gunakan css ini  -->
+  <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+  <!-- cdn bootstrap4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   {{-- bootstrap --}}
+  @yield('css-content')
   @yield('ckeditor')
   @yield('bootstrap')
 
@@ -97,13 +105,19 @@ to get the desired effect
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="{{ asset('template-backend/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('template-backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE -->
-<script src="{{ asset('template-backend/dist/js/adminlte.js') }}"></script>
+
 
 <!-- OPTIONAL SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<!-- js untuk bootstrap4  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+crossorigin="anonymous"></script>
+@yield('js-select-2')
+<!-- js untuk select2  -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="{{ asset('template-backend/plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('template-backend/dist/js/demo.js') }}"></script>
 <script src="{{ asset('template-backend/dist/js/pages/dashboard3.js') }}"></script>

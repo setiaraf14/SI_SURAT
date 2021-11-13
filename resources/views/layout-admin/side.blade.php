@@ -46,6 +46,14 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
+            <a href="{{ url('/admin/index-surat') }}" class="nav-link @yield('Index-Surat') ">
+              <i class="nav-icon fas fa-file-alt"></i>
+              <p>
+                Index Akun Surat
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link @yield('example-page') ">
               <i class="nav-icon fas fa-file-alt"></i>
               <p>

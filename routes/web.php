@@ -22,8 +22,21 @@ function () {
     Route::get('/', function () {
         return view('layout-admin.master-admin');
     });
-    Route::get('/surat-masuk', 'SuratMasukController@index');
+
+    Route::prefix('surat-masuk')->group(function () {
+        Route::get('/', 'SuratMasukController@index');
+        Route::get('/create-surat-masuk', 'SuratMasukController@createSuratMasuk');
+        Route::post('/store-surat-masuk', 'SuratMasukController@storeSuratMasuk');   
+    });
+
     Route::get('/surat-keluar', 'SuratKeluarController@index');
+    
+    Route::group(['prefix' => 'index-surat'], function (){
+        Route::get('/', 'IndexSuratController@index');
+        Route::post('/store-index-surat/{id?}', 'IndexSuratController@storeIndexSurat');
+        Route::get('/delete-index-surat/{id}', 'IndexSuratController@deleteIndexSurat');
+    });
+
 });
 
 // Route::get('/admin', function () {
