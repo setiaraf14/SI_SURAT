@@ -25,6 +25,18 @@
                     <!-- /.card-header -->
 
                     <div class="card-body">
+                        @if(session('message'))
+                            <div class="alert alert-{{ session('style') }}" id="alert-notification">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <h5>{{ session('message') }}</h5>
+                                    </div>
+                                    <div class="col-md-1 text-right">
+                                        <span id="close-notification">&times;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="table-responsive">
                             <table id="tabel-data" class="table table-bordered table-striped">
                                 <thead>
@@ -49,7 +61,13 @@
                                             <td>{{ $data->nomor_surat }}</td>
                                             <td>{{ $data->indexSurat->index_surat }}</td>
                                             <td>{{ $data->prihal }}</td>
-                                            <td>Action</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between">
+                                                    <a href="{{ url('admin/surat-masuk/delete-surat-masuk/'.$data->id) }}" class="btn btn-danger">Hapus</a>
+                                                    <a href="{{ url('admin/surat-masuk/show-surat-masuk/'.$data->id) }}" class="btn btn-info">Show surat</a>
+                                                    <a href="{{ url('admin/surat-masuk/edit-surat-masuk/'.$data->id) }}" class="btn btn-warning">Edit</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

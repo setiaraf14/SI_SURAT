@@ -26,10 +26,20 @@ function () {
     Route::prefix('surat-masuk')->group(function () {
         Route::get('/', 'SuratMasukController@index');
         Route::get('/create-surat-masuk', 'SuratMasukController@createSuratMasuk');
-        Route::post('/store-surat-masuk', 'SuratMasukController@storeSuratMasuk');   
+        Route::post('/store-surat-masuk/{id?}', 'SuratMasukController@storeSuratMasuk');
+        Route::get('/delete-surat-masuk/{id}', 'SuratMasukController@deleteSuratMasuk'); 
+        Route::get('/edit-surat-masuk/{id}', 'SuratMasukController@createSuratMasuk');
+        Route::get('/show-surat-masuk/{id}', 'SuratMasukController@showSuratMasuk');
     });
 
-    Route::get('/surat-keluar', 'SuratKeluarController@index');
+    Route::prefix('surat-keluar')->group(function () {
+        Route::get('/', 'SuratKeluarController@index');
+        Route::get('/create-surat-keluar', 'SuratKeluarController@createSuratKeluar');
+        Route::post('/store-surat-keluar/{id?}', 'SuratKeluarController@storeSuratKeluar');
+        Route::get('/delete-surat-keluar/{id}', 'SuratKeluarController@deleteSuratKeluar'); 
+        Route::get('/edit-surat-keluar/{id}', 'SuratKeluarController@createSuratKeluar');
+        Route::get('/show-surat-keluar/{id}', 'SuratKeluarController@showSuratKeluar');
+    });
     
     Route::group(['prefix' => 'index-surat'], function (){
         Route::get('/', 'IndexSuratController@index');
