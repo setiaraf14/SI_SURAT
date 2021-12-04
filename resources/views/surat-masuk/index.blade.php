@@ -48,6 +48,7 @@
                                         <th>Nomor Surat</th>
                                         <th>Index Surat</th>
                                         <th>Prihal</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -61,11 +62,24 @@
                                             <td>{{ $data->nomor_surat }}</td>
                                             <td>{{ $data->indexSurat->index_surat }}</td>
                                             <td>{{ $data->prihal }}</td>
+                                            @if ($data->status == "Tindak Lanjuti")
+                                                <td><span class="bg-success p-1">{{ $data->status }}</span></td>
+                                            @elseif($data->status == "Tidak diLanjuti")
+                                                <td><span class="bg-danger p-1">{{ $data->status }}</span></td>
+                                            @else
+                                                <td><span class="bg-info p-1">{{ $data->status }}</span></td>
+                                            @endif
                                             <td>
                                                 <div class="d-flex justify-content-between">
-                                                    <a href="{{ url('admin/surat-masuk/delete-surat-masuk/'.$data->id) }}" class="btn btn-danger">Hapus</a>
-                                                    <a href="{{ url('admin/surat-masuk/show-surat-masuk/'.$data->id) }}" class="btn btn-info">Show surat</a>
-                                                    <a href="{{ url('admin/surat-masuk/edit-surat-masuk/'.$data->id) }}" class="btn btn-warning">Edit</a>
+                                                    @if (Auth::user()->role == "pegawai")
+                                                        <a href="{{ url('admin/surat-masuk/delete-surat-masuk/'.$data->id) }}" class="btn btn-danger m-1">Hapus</a>
+                                                        <a href="{{ url('admin/surat-masuk/edit-surat-masuk/'.$data->id) }}" class="btn btn-warning m-1">Edit</a>   
+                                                    @endif
+                                                    <a href="{{ url('admin/surat-masuk/show-surat-masuk/'.$data->id) }}" class="btn btn-info m-1">Show surat</a>
+                                                    @if (Auth::user()->role == "Kepala-Dinas")
+                                                        <a href="{{ url('admin/surat-masuk/status-aprove/'.$data->id) }}" class="btn btn-success m-1">Tindak Lanjuti</a>
+                                                        <a href="{{ url('admin/surat-masuk/status-disaprove/'.$data->id) }}" class="btn btn-danger m-1">TIdak dilanjutkan</a>   
+                                                    @endif
                                                 </div>
                                             </td>
                                         </tr>

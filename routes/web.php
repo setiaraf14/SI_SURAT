@@ -30,6 +30,8 @@ function () {
         Route::get('/delete-surat-masuk/{id}', 'SuratMasukController@deleteSuratMasuk'); 
         Route::get('/edit-surat-masuk/{id}', 'SuratMasukController@createSuratMasuk');
         Route::get('/show-surat-masuk/{id}', 'SuratMasukController@showSuratMasuk');
+        Route::get('/status-aprove/{id}', 'SuratMasukController@changeStatusAprove');
+        Route::get('/status-disaprove/{id}', 'SuratMasukController@changeStatusDisprove');
     });
 
     Route::prefix('surat-keluar')->group(function () {

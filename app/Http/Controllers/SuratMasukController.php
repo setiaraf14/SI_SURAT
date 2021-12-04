@@ -33,6 +33,9 @@ class SuratMasukController extends Controller
         $suratMasuk->tanggal_surat = $request->tanggal_surat;
         $suratMasuk->tanggal_masuk_surat = date('Y-m-d');
         $suratMasuk->prihal = $request->prihal;
+        if($id == null) {
+            $suratMasuk->status = "incomming";
+        }
         $suratMasuk->index_surat_id = $request->index_surat_id;
         if($id) {
             if($suratMasuk->softcopy_surat != "blum upload") {
@@ -75,6 +78,28 @@ class SuratMasukController extends Controller
         }
         return redirect('admin/surat-masuk')->with([
             'message' => 'Berhasil hapus surat masuk',
+            'style' => 'success'
+        ]);
+    }
+
+    public function changeStatusAprove(Request $request, $id = null)
+    {
+        $suratMasuk = Suratmasuk::with([])->where('id', $id)->first();
+        $suratMasuk->status = "Tindak Lanjuti";
+        $suratMasuk->save();
+        return redirect('admin/surat-masuk')->with([
+            'message' => 'Berhasil ubah status',
+            'style' => 'success'
+        ]);
+    }
+
+    public function changeStatusDisprove(Request $request, $id = null)
+    {
+        $suratMasuk = Suratmasuk::with([])->where('id', $id)->first();
+        $suratMasuk->status = "Tidak diLanjuti";
+        $suratMasuk->save();
+        return redirect('admin/surat-masuk')->with([
+            'message' => 'Berhasil ubah status',
             'style' => 'success'
         ]);
     }

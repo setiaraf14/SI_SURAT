@@ -53,67 +53,6 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link @yield('example-page') ">
-              <i class="nav-icon fas fa-file-alt"></i>
-              <p>
-                Example Page Content
-              </p>
-            </a>
-          </li>
-        {{-- <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link @yield('berita') ">
-            <i class="fas fa-newspaper"></i>
-            <p>
-                Berita Kecamatan
-            </p>
-            </a>
-        </li> --}}
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link"  @yield('user-role')>
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Menu & Sub Menu
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Staff</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kepala Bagian</p>
-                </a>
-              </li>
-              {{-- <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>User</p>
-                </a>
-              </li> --}}
-            </ul>
-          </li>
-          {{-- <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link @yield('rating') ">
-              <i class="nav-icon fas fa-star-half-alt"></i>
-              <p>
-                Rating
-              </p>
-            </a>
-          </li> --}}
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link">
-              <i class="far fa-hand-point-left"></i>
-              <p>
-                Back To Homepage
-              </p>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
