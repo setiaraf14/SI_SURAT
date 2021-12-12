@@ -74,6 +74,7 @@
                                                     @if (Auth::user()->role == "pegawai")
                                                         <a href="{{ url('admin/surat-masuk/delete-surat-masuk/'.$data->id) }}" class="btn btn-danger m-1">Hapus</a>
                                                         <a href="{{ url('admin/surat-masuk/edit-surat-masuk/'.$data->id) }}" class="btn btn-warning m-1">Edit</a>   
+                                                        <a href="{{ url('admin/surat-masuk/print/'.$data->id) }}" class="btn btn-primary m-1">Print</a>
                                                     @endif
                                                     <a href="{{ url('admin/surat-masuk/show-surat-masuk/'.$data->id) }}" class="btn btn-info m-1">Show surat</a>
                                                     @if (Auth::user()->role == "Kepala-Dinas")

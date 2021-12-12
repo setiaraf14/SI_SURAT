@@ -17,12 +17,16 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/desposisi', function () {
+    return view('surat-masuk.desposisi');
+});
+
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], 
 function () {
-    Route::get('/', function () {
-        return view('layout-admin.master-admin');
-    });
-
+    // Route::get('/', function () {
+    //     return view('layout-admin.master-admin');
+    // });
+    Route::get('/', 'DashboardController@dashboard');
     Route::prefix('surat-masuk')->group(function () {
         Route::get('/', 'SuratMasukController@index');
         Route::get('/create-surat-masuk', 'SuratMasukController@createSuratMasuk');
@@ -32,6 +36,7 @@ function () {
         Route::get('/show-surat-masuk/{id}', 'SuratMasukController@showSuratMasuk');
         Route::get('/status-aprove/{id}', 'SuratMasukController@changeStatusAprove');
         Route::get('/status-disaprove/{id}', 'SuratMasukController@changeStatusDisprove');
+        Route::get('/print/{id}', 'SuratMasukController@printDesposisi');
     });
 
     Route::prefix('surat-keluar')->group(function () {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Suratmasuk;
 use App\IndexSurat;
 use Illuminate\Support\Facades\Storage;
+use PDF;
 
 class SuratMasukController extends Controller
 {
@@ -102,5 +103,13 @@ class SuratMasukController extends Controller
             'message' => 'Berhasil ubah status',
             'style' => 'success'
         ]);
+    }
+
+    public function printDesposisi(Request $request, $id=null)
+    {
+        $suratMasuk = Suratmasuk::with(['indexSurat'])->where('id', $id)->first();
+        // return view('surat-masuk.desposisi', compact('suratMasuk'));
+        $pdf = PDF::loadview('surat-masuk.desposisi', compact('suratMasuk'))->setPaper('A4','landscape');
+        return $pdf->stream();
     }
 }

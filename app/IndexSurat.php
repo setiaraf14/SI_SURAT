@@ -18,6 +18,6 @@ class IndexSurat extends Model
 
     public function suratKeluar()
     {
-        return $this->hasMany(Suratmasuk::class, 'index_surat_id', 'id');
+        return $this->hasMany(Suratkeluar::class, 'index_surat_id', 'id');
     }
 }
