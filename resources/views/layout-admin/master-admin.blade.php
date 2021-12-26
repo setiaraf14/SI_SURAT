@@ -40,7 +40,7 @@ to get the desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" style="background-image: url('{{ asset('image/lobbydispora.jpg')}}');background-repeat: repeat;">
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -75,11 +75,11 @@ to get the desired effect
   
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background-image: url('{{ asset('image/lobbydispora.jpg')}}'); background-size: cover;">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <div class="content-header" >
       <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="row mb-2" >
           @yield('content')
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
