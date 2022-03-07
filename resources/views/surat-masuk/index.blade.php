@@ -60,7 +60,15 @@
                                             <td>{{ $data->tanggal_masuk_surat }}</td>
                                             <td>{{ $data->tanggal_surat }}</td>
                                             <td>{{ $data->nomor_surat }}</td>
-                                            <td>{{ $data->indexSurat->index_surat }}</td>
+                                            @if($data->indexSurat)
+                                                @if ($data->indexSurat->index_surat)
+                                                    <td>{{ $data->indexSurat->index_surat }}</td>
+                                                @else
+                                                    <td>-</td>
+                                                @endif 
+                                            @else
+                                                <td>-</td>
+                                            @endif
                                             <td>{{ $data->prihal }}</td>
                                             @if ($data->status == "Tindak Lanjuti")
                                                 <td><span class="bg-success p-1">{{ $data->status }}</span></td>

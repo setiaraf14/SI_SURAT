@@ -58,7 +58,16 @@
                                             <td>{{ $data->nomor_surat }}</td>
                                             <td>{{ $data->tanggal_surat }}</td>
                                             <td>{{ $data->prihal }}</td>
-                                            <td>{{ $data->indexSurat->index_surat }}</td>
+                                            {{-- <td>{{ $data->indexSurat->index_surat }}</td> --}}
+                                            @if($data->indexSurat)
+                                                @if ($data->indexSurat->index_surat)
+                                                    <td>{{ $data->indexSurat->index_surat }}</td>
+                                                @else
+                                                    <td>-</td>
+                                                @endif
+                                            @else
+                                                <td>-</td> 
+                                            @endif
                                             <td>
                                                 <div class="d-flex justify-content-between">
                                                     <a href="{{ url('admin/surat-keluar/delete-surat-keluar/'.$data->id) }}" class="btn btn-danger">Hapus</a>

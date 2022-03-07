@@ -7,10 +7,11 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center">
         <div class="image text-center">
-          <img src="{{ asset('image/kota-tangerang.png') }}" class="img-circle elevation-2" width="250" alt="User Image">
-          <h6 style="color: white" class="m-2">DISPORA KOTA TRANGERANG</h6>
+          <img src="{{ asset('image/kota-tangerang.png') }}" class="img-circle elevation-2" width="100%" alt="User Image">
+          <h5 style="color: white" class="mt-2">DIPORA</h5>
+          <p style="color: white">KOTA TRANGERANG</p>
         </div>
         <div class="info">
           <a href="#" class="d-block"></a>
