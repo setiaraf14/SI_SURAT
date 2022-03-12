@@ -21,7 +21,7 @@
         </div>
     </div>
     <br><br>
-        <div class="info d-flex justify-content-center">
+        <div class="info ">
             <div class="col-lg-3">
                 <div class="small-box bg-primary">
                     <div class="inner">
@@ -33,8 +33,7 @@
                 </div>
                 {{-- <a href="{{ route('kegiatan.index') }}" class="small-box-footer">olah kegiatan <i class="fas fa-arrow-circle-right"></i></a> --}}
                 </div>
-            </div>
-            <div class="col-lg-3">
+
                 <div class="small-box bg-warning">
                     <div class="inner">
                     <h3>{{ $suratKeluar }}</h3>

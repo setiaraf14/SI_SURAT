@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('{{ asset('image/background_repeat.jpg')}}');background-repeat: repeat;">
+<body style="background-image: url('{{ asset('image/kota-tangerang-wallpaper.jpg')}}'); background-size: cover;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: rgba(46, 138, 138, 1);">
             <div class="container">

@@ -18,9 +18,11 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h3 class="card-title">Data Surat Masuk</h3>
-                        <a type="button" class="btn btn-primary" href="{{ url('admin/surat-masuk/create-surat-masuk') }}">
-                            Input Surat Masuk
-                        </a>
+                        @if(Auth::user()->role == "pegawai")
+                            <a type="button" class="btn btn-primary" href="{{ url('admin/surat-masuk/create-surat-masuk') }}">
+                                Input Surat Masuk
+                            </a>
+                        @endif
                     </div>
                     <!-- /.card-header -->
 

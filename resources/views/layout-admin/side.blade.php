@@ -1,7 +1,11 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">{{ Auth::user()->role }}</span>
+      @if(Auth::user()->role == "Kepala-Dinas")
+        <span class="brand-text font-weight-light">{{ strtoupper(Auth::user()->role) }}</span>
+      @elseif(Auth::user()->role == "pegawai")
+        <span class="brand-text font-weight-light">{{ strtoupper(Auth::user()->role . ' BAGIAN UMUM') }}</span>
+      @endif
     </a>
 
     <!-- Sidebar -->
